@@ -926,145 +926,254 @@ background-repeat:no-repeat;
 }
 
 /* ==========================================
-   TABLET
+   TABLETS
 ========================================== */
 
-@media(max-width:992px){
+@media (max-width: 992px){
+
+    html,
+    body{
+        overflow:auto;
+    }
 
     #gameScreen{
-
-        grid-template-columns:1fr;
-
-        gap:18px;
-
+        display:flex;
+        flex-direction:column;
+        height:auto;
+        min-height:100vh;
         padding:18px;
+        gap:18px;
+    }
 
-        overflow:hidden;
-
+    .left-panel{
+        order:1;
     }
 
     .right-panel{
-
-        order:-1;
-
+        order:2;
         height:260px;
-
     }
 
-    #prizeLadder{
+    .top-bar{
+        gap:15px;
+    }
 
-        overflow-y:auto;
-
+    .money-box{
+        padding:15px;
     }
 
     .timer{
-
-        width:95px;
-
-        height:95px;
-
-        font-size:1.5rem;
-
+        width:90px;
+        height:90px;
     }
 
-}
-
-@media(max-width:768px){
-
-    #gameScreen{
-    display:flex;
-    flex-direction:column;
-    padding:12px;
-    gap:15px;
-    height:100vh;
-}
-
-    .left-panel{
-    order:1;
-}
-
-.right-panel{
-    order:2;
-    height:220px;
-    margin-top:10px;
-}
-
-.right-panel h2{
-    position:sticky;
-    top:0;
-
-    background:var(--card);
-
-    padding-bottom:10px;
-
-    z-index:5;
-}
-
-    #prizeLadder{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-
-    overflow-y:auto;
-    height:100%;
-}
-
-    #prizeLadder li{
-
-        font-size:.7rem;
-
-        padding:6px;
-
+    #timer{
+        font-size:1.6rem;
     }
 
     .answers{
-
         grid-template-columns:1fr;
-
     }
 
     .lifelines{
+        justify-content:center;
+        gap:20px;
+    }
 
-        grid-template-columns:repeat(3,1fr);
+    .lifelines img{
+        width:75px;
+        height:75px;
+    }
 
+    #prizeLadder{
+        display:flex;
+        flex-direction:column;
+        overflow-y:auto;
     }
 
 }
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    html,
+    body{
+        overflow:auto;
+    }
+
+    .screen{
+        height:auto;
+        min-height:100vh;
+    }
+
+    #gameScreen{
+        display:flex;
+        flex-direction:column;
+        height:auto;
+        padding:12px;
+        gap:15px;
+    }
+
+    .top-bar{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .money-box{
+        width:100%;
+        text-align:center;
+    }
+
+    .timer{
+        width:80px;
+        height:80px;
+        border-width:4px;
+    }
+
+    #timer{
+        font-size:1.5rem;
+    }
+
+    .question-counter{
+        font-size:1rem;
+    }
+
+    .question-box{
+        min-height:140px;
+        padding:18px;
+    }
+
+    .question-box h2{
+        font-size:1.5rem;
+        line-height:1.5;
+    }
+
+    .answers{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .answer-btn{
+        min-height:60px;
+        font-size:1rem;
+        padding:15px;
+    }
+
+    .lifelines{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        gap:12px;
+        margin:10px 0;
+    }
+
+    .lifelines img{
+        width:65px;
+        height:65px;
+    }
+
+    .right-panel{
+        height:180px;
+    }
+
+    #prizeLadder{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        overflow-y:auto;
+    }
+
+    #prizeLadder li{
+        font-size:.75rem;
+        padding:8px;
+    }
+
+}
+
 
 /* ==========================================
    SMALL PHONES
 ========================================== */
 
-@media(max-width:480px){
+@media (max-width:480px){
+
+    .start-content{
+        width:100%;
+    }
+
+    .logo{
+        width:110px;
+    }
 
     .start-content h1{
+        font-size:1.8rem;
+    }
 
-        font-size:2rem;
-
+    .start-content h2{
+        font-size:1.2rem;
     }
 
     .start-content p{
-
-        font-size:.9rem;
-
+        font-size:.95rem;
     }
 
     #startBtn{
-
         width:100%;
+    }
 
+    .money-box h4{
+        font-size:.9rem;
+    }
+
+    #currentMoney{
+        font-size:1.5rem;
+    }
+
+    .question-box{
+        min-height:120px;
+        padding:15px;
+    }
+
+    .question-box h2{
+        font-size:1.3rem;
+    }
+
+    .answer-btn{
+        min-height:55px;
+        font-size:.95rem;
+        padding:12px;
     }
 
     .lifelines{
-
-        grid-template-columns:1fr;
-
+        justify-content:space-between;
+        gap:8px;
     }
 
-    .lifelines button{
+    .lifelines img{
+        width:55px;
+        height:55px;
+    }
 
-        width:100%;
+    .right-panel{
+        height:160px;
+    }
 
+    #prizeLadder li{
+        font-size:.7rem;
+        padding:6px;
+    }
+
+    #resultImage{
+        width:130px;
+    }
+
+    .trophy{
+        width:90px;
     }
 
 }
