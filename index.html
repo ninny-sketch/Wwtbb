@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Who Wants To Be A Billionaire? | Tech4Girls Edition</title>
+
+    <link rel="stylesheet" href="src/style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         START SCREEN
+    ====================================== -->
+
+    <section id="startScreen" class="screen">
+
+        <div class="start-content">
+
+    
+
+    
+
+            <h1>💰 Who Wants To Be A Billionaire?</h1>
+
+            <h2>Tech4Girls Edition</h2>
+
+            <p>
+                Test your knowledge in HTML, CSS, JavaScript,
+                Git, GitHub, UI/UX Design and Figma.
+            </p>
+
+            <button id="startBtn">
+                Start Game
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         GAME SCREEN
+    ====================================== -->
+
+    <section id="gameScreen" class="screen hidden">
+
+        <div class="left-panel">
+
+            <!-- Header -->
+
+            <div class="top-bar">
+
+                <div class="money-box">
+
+                    <h4>Current Prize</h4>
+
+                    <h2 id="currentMoney">
+                        $100
+                    </h2>
+
+                </div>
+
+                <div class="timer">
+
+                    ⏱
+
+                    <span id="timer">
+                        30
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Question Number -->
+
+            <div class="question-counter">
+
+                Question
+
+                <span id="questionCounter">
+
+                    1
+
+                </span>
+
+                of
+
+                <span>
+
+                    30
+
+                </span>
+
+            </div>
+
+            <!-- Progress Bar -->
+
+            <div class="progress-container">
+
+                <div id="progressBar">
+
+                </div>
+
+            </div>
+                    <!-- ==========================
+             QUESTION BOX
+        =========================== -->
+
+        <div class="question-box">
+
+            <h2 id="question">
+
+                Question appears here...
+
+            </h2>
+
+        </div>
+
+        <!-- ==========================
+             ANSWERS
+        =========================== -->
+
+        <div class="answers">
+
+            <button class="answer-btn" id="answer0">
+                A. Option One
+            </button>
+
+            <button class="answer-btn" id="answer1">
+                B. Option Two
+            </button>
+
+            <button class="answer-btn" id="answer2">
+                C. Option Three
+            </button>
+
+            <button class="answer-btn" id="answer3">
+                D. Option Four
+            </button>
+
+        </div>
+
+        <!-- ==========================
+             LIFELINES
+        =========================== -->
+
+
+<div class="lifelines">
+
+    <button id="fiftyBtn">
+        <img src="images/fifty.png" alt="50:50">
+    </button>
+
+    <button id="audienceBtn">
+        <img src="images/audience.png" alt="Audience">
+    </button>
+
+    <button id="friendBtn">
+        <img src="images/phone.png" alt="Phone Friend">
+    </button>
+
+</div>
+        </div>
+    <!-- ==========================
+         RIGHT PANEL
+    =========================== -->
+
+    <div class="right-panel">
+
+        <h2>
+
+            Prize Ladder
+
+        </h2>
+
+        <ul id="prizeLadder">
+
+            <li>$100</li>
+            <li>$200</li>
+            <li>$300</li>
+            <li>$500</li>
+            <li>$1,000</li>
+            <li>$2,000</li>
+            <li>$4,000</li>
+            <li>$8,000</li>
+            <li>$16,000</li>
+            <li>$32,000</li>
+            <li class="safe-level">$64,000 ⭐</li>
+            <li>$125,000</li>
+            <li>$250,000</li>
+            <li>$500,000</li>
+            <li>$1,000,000</li>
+            <li>$2,000,000</li>
+            <li>$4,000,000</li>
+            <li>$8,000,000</li>
+            <li>$16,000,000</li>
+            <li>$32,000,000</li>
+            <li class="safe-level">$64,000,000 ⭐</li>
+            <li>$125,000,000</li>
+            <li>$250,000,000</li>
+            <li>$500,000,000</li>
+            <li>$600,000,000</li>
+            <li>$700,000,000</li>
+            <li>$800,000,000</li>
+            <li>$900,000,000</li>
+            <li>$950,000,000</li>
+            <li class="grand-prize">🏆 $1,000,000,000</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+    <!-- =====================================
+         MILESTONE MODAL
+    ====================================== -->
+
+    <div id="milestoneModal" class="modal hidden">
+
+        <div class="modal-content">
+<img
+    src="images/trophy.png"
+    class="trophy"
+    alt="Trophy">
+            <h2>🎉 Milestone Reached!</h2>
+
+            <p>
+
+                Congratulations!
+
+                You've reached a safe level.
+
+            </p>
+
+            <h1 id="milestonePrize">
+
+                $0
+
+            </h1>
+
+            <div class="modal-buttons">
+
+                <button id="continueBtn">
+
+                    Continue Playing
+
+                </button>
+
+                <button id="walkAwayBtn">
+
+                    Walk Away
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         RESULT SCREEN
+    ====================================== -->
+
+    <section id="resultScreen" class="screen hidden">
+
+        <div class="result-content">
+            <img
+    id="resultImage"
+    src="images/game-over.png"
+    alt="Result">
+
+            <h1 id="resultTitle">
+
+                Game Over
+
+            </h1>
+
+            <p id="resultMessage">
+
+                Thank you for playing!
+
+            </p>
+
+            <h2>
+
+                Final Prize
+
+            </h2>
+
+            <h1 id="finalPrize">
+
+                $0
+
+            </h1>
+
+            <button id="restartBtn">
+
+                Play Again
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         SOUND EFFECTS
+    ====================================== -->
+
+    <audio id="startSound" src="sounds/start.mp3"></audio>
+
+    <audio id="correctSound" src="sounds/correct.mp3"></audio>
+
+    <audio id="wrongSound" src="sounds/wrong.mp3"></audio>
+
+    <audio id="timerSound" src="sounds/timer.mp3"></audio>
+
+    <audio id="moneySound" src="sounds/money.mp3"></audio>
+
+    <audio id="lifelineSound" src="sounds/lifeline.mp3"></audio>
+
+    <audio id="winnerSound" src="sounds/winner.mp3"></audio>
+
+    <audio id="applauseSound" src="sounds/applause.mp3"></audio>
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
